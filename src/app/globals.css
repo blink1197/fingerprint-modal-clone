@@ -29,6 +29,20 @@
   }
 }
 
+@layer components {
+  .highlighted-text {
+    color: #008080;
+    font-weight: bold
+  }
+
+  .red-highlighted-text {
+    color: #F84960;
+    font-weight: bold
+  }
+}
+
+
+
 body {
   background: var(--background);
   color: var(--foreground);
