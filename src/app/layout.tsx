@@ -3,7 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
 const openSans = Open_Sans({
-  weight: ["700"], // Bold only
+  weight: ["400", "700"], // Bold only
   subsets: ["latin"],
   variable: "--font-open-sans",
   display: "swap",
