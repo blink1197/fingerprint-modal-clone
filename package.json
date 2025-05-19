@@ -12,6 +12,7 @@
     "@fingerprintjs/fingerprintjs-pro-react": "^2.6.3",
     "@fingerprintjs/fingerprintjs-pro-server-api": "^6.5.0",
     "@headlessui/react": "^2.2.3",
+    "@heroicons/react": "^2.2.0",
     "leaflet": "^1.9.4",
     "next": "15.3.2",
     "react": "^19.0.0",
