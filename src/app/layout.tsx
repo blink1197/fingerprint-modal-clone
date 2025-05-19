@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import 'leaflet/dist/leaflet.css'
 import "./globals.css";
 import { FpjsProvider } from "@fingerprintjs/fingerprintjs-pro-react";
 
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} antialiased font-sans`}>
         <FpjsProvider
           loadOptions={{
-            apiKey: process.env.FINGEPRINTJS_API_KEY || "",
+            apiKey: process.env.FINGERPRINTJS_API_KEY || "",
             region: "ap",
           }}
         >
