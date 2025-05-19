@@ -5,12 +5,22 @@
   --foreground: #171717;
 }
 
+@theme {
+  --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@theme {
+  --font-open-sans: var(--font-open-sans);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-helvetica);
+  --font-mono: var(--font-helvetica);
+  --font-heading: var(--font-open-sans);
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
