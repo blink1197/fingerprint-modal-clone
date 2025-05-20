@@ -3,7 +3,7 @@ export default function LogoCloud() {
         <div className="bg-white py-4">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:max-w-none text-center">
-                    <h2 className="text-lg/8 font-semibold text-gray-900">Trusted by 6000+ companies of all sizes</h2>
+                    <h2 className="text-lg/8 font-semibold text-gray-900 font-heading">Trusted by 6000+ companies of all sizes</h2>
                     <div className="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">
                         <img
                             alt="Transistor"
