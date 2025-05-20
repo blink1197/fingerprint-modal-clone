@@ -11,10 +11,6 @@ import dynamic from "next/dynamic";
 
 const MainContent = ({ unsealedResult, visitHistory, isLoading }: { unsealedResult: EventsGetResponse | undefined, visitHistory: VisitorsResponse | undefined, isLoading: boolean | undefined }) => {
   const visitorId = unsealedResult?.products.identification?.data?.visitorId || "";
-  const browserName = unsealedResult?.products.identification?.data?.browserDetails.browserName || "";
-  const browserFullVersion = unsealedResult?.products.identification?.data?.browserDetails.browserFullVersion || "";
-  const isIncognito = unsealedResult?.products.incognito?.data?.result || false;
-  const ipAddress = unsealedResult?.products.identification?.data?.ip || "";
   const city = unsealedResult?.products.ipInfo?.data?.v4?.geolocation.city?.name || "";
   const country = unsealedResult?.products.ipInfo?.data?.v4?.geolocation.country?.name || "";
   const isVPN = unsealedResult?.products.vpn?.data?.result || false;
@@ -50,16 +46,16 @@ const MainContent = ({ unsealedResult, visitHistory, isLoading }: { unsealedResu
           Visitor <span className="highlighted-text font-bold">{visitorId}!</span>
         </p>
         <p className="mt-4">
-          It's great to have you here.
+          It&apos;s great to have you here.
         </p>
         <p className="font-bold">This is your {`${getOrdinalWord(totalVisitCount || 1)}`} visit using Chrome.</p>
         <p className="mt-4">
-          Your <span className="font-bold">current IP </span>suggests you're in
+          Your <span className="font-bold">current IP </span>suggests you&apos;re in
         </p>
         <p>{`${city}`}, {`${country}`}</p>
         {!isVPN &&
           <p>
-            Are you sure you're not using a VPN?
+            Are you sure you&apos;re not using a VPN?
           </p>
         }
         <p className="mt-4">
@@ -123,11 +119,11 @@ const MainContent = ({ unsealedResult, visitHistory, isLoading }: { unsealedResu
               <ChevronLeft />
             </button>
             <div className="flex flex-col gap-1 p-2 pl-4 items-start justify-center text-xs w-[95%] md:w-[94%]">
-              <p>{getTimeDifference(Date.now(), visitHistory?.visits[visitIndex].timestamp!)}</p>
+              <p>{getTimeDifference(Date.now(), visitHistory?.visits[visitIndex].timestamp ?? Date.now())}</p>
               <p className="font-bold flex-nowrap text-left">{`${visitHistory?.visits[visitIndex].ipLocation?.city?.name || city}`}, {`${visitHistory?.visits[visitIndex].ipLocation?.country?.name || country}`}</p>
             </div>
             <div className="h-20 w-full hidden sm:flex items-center justify-center border-l-1 border-gray-300 overflow-hidden">
-              <MapLeaflet latitude={visitHistory?.visits[visitIndex].ipLocation?.latitude! || latitude} longitude={visitHistory?.visits[visitIndex].ipLocation?.longitude! || longitude} mapId={"map-sm"} />
+              <MapLeaflet latitude={visitHistory?.visits[visitIndex].ipLocation?.latitude ?? latitude} longitude={visitHistory?.visits[visitIndex].ipLocation?.longitude ?? longitude} mapId={"map-sm"} />
             </div>
             <div>
             </div>
@@ -140,7 +136,7 @@ const MainContent = ({ unsealedResult, visitHistory, isLoading }: { unsealedResu
             </button>
           </div>
           <div className="h-20 flex sm:hidden">
-            <MapLeaflet latitude={visitHistory?.visits[visitIndex].ipLocation?.latitude! || latitude} longitude={visitHistory?.visits[visitIndex].ipLocation?.longitude! || longitude} mapId={"map-xs"} />
+            <MapLeaflet latitude={visitHistory?.visits[visitIndex].ipLocation?.latitude ?? latitude} longitude={visitHistory?.visits[visitIndex].ipLocation?.longitude ?? longitude} mapId={"map-xs"} />
           </div>
         </section>
         <section className="grid grid-cols-2 divide-x divide-y divide-gray-300  border-gray-300 text-xs sm:pl-[55px]">
@@ -168,7 +164,7 @@ const MainContent = ({ unsealedResult, visitHistory, isLoading }: { unsealedResu
 }
 
 export default function Modal() {
-  const { isLoading, error, data, getData } = useVisitorData(
+  const { isLoading, data } = useVisitorData(
     { extendedResult: true },
     { immediate: true }
   );
@@ -234,7 +230,7 @@ export default function Modal() {
           <Toggle
             isDeveloper={isDeveloper}
             setIsDeveloper={setIsDeveloper}
-            label="I'm a developer"
+            label="Im a developer"
           />
         </div>
 

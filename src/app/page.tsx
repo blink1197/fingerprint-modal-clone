@@ -138,9 +138,6 @@ const footerNavigation = {
   ],
 }
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
