@@ -252,7 +252,7 @@ export default function Home() {
                 <h1 className="text-5xl font-semibold text-gray-900 sm:text-5xl font-heading">Identify <span className="highlighted-text inline-block">Every Visitor</span></h1>
                 <p className="mt-4 text-lg text-pretty text-gray-500 sm:text-xl/8">
                   Stop fraud, detect bots, or delight customers. Identify good and bad
-                  visitors with industry-leading accuracy - even if they're anonymous.
+                  visitors with industry-leading accuracy - even if they&apos;re anonymous.
                 </p>
                 <div className="mt-4 flex items-center justify-center gap-x-6">
                   <a
